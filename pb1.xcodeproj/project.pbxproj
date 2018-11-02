@@ -13,6 +13,12 @@
 		28A4ECB7218C3E8D006BA67C /* pb1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28A4ECB5218C3E8D006BA67C /* pb1.xcdatamodeld */; };
 		28A4ECB9218C3E8D006BA67C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A4ECB8218C3E8D006BA67C /* Assets.xcassets */; };
 		28A4ECBC218C3E8D006BA67C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A4ECBA218C3E8D006BA67C /* LaunchScreen.storyboard */; };
+		28A4ECC8218C4163006BA67C /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A4ECC7218C4163006BA67C /* Contacts.swift */; };
+		28A4ECCA218C4268006BA67C /* ConTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A4ECC9218C4268006BA67C /* ConTableViewCell.swift */; };
+		28A4ECCC218C4E1C006BA67C /* EnterContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A4ECCB218C4E1C006BA67C /* EnterContactViewController.swift */; };
+		28A4ECCF218C54D7006BA67C /* Contacts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A4ECCD218C54D7006BA67C /* Contacts+CoreDataClass.swift */; };
+		28A4ECD0218C54D7006BA67C /* Contacts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A4ECCE218C54D7006BA67C /* Contacts+CoreDataProperties.swift */; };
+		28A4ECD3218C5500006BA67C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A4ECD2218C54FF006BA67C /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		28A4ECB8218C3E8D006BA67C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28A4ECBB218C3E8D006BA67C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28A4ECBD218C3E8D006BA67C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28A4ECC7218C4163006BA67C /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		28A4ECC9218C4268006BA67C /* ConTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConTableViewCell.swift; sourceTree = "<group>"; };
+		28A4ECCB218C4E1C006BA67C /* EnterContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterContactViewController.swift; sourceTree = "<group>"; };
+		28A4ECCD218C54D7006BA67C /* Contacts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contacts+CoreDataClass.swift"; sourceTree = "<group>"; };
+		28A4ECCE218C54D7006BA67C /* Contacts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contacts+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		28A4ECD2218C54FF006BA67C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A4ECD3218C5500006BA67C /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +55,7 @@
 			children = (
 				28A4ECAD218C3E8D006BA67C /* pb1 */,
 				28A4ECAC218C3E8D006BA67C /* Products */,
+				28A4ECD1218C54FF006BA67C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +70,28 @@
 		28A4ECAD218C3E8D006BA67C /* pb1 */ = {
 			isa = PBXGroup;
 			children = (
+				28A4ECCD218C54D7006BA67C /* Contacts+CoreDataClass.swift */,
+				28A4ECCE218C54D7006BA67C /* Contacts+CoreDataProperties.swift */,
 				28A4ECAE218C3E8D006BA67C /* AppDelegate.swift */,
 				28A4ECB0218C3E8D006BA67C /* ViewController.swift */,
+				28A4ECCB218C4E1C006BA67C /* EnterContactViewController.swift */,
 				28A4ECB2218C3E8D006BA67C /* Main.storyboard */,
 				28A4ECB8218C3E8D006BA67C /* Assets.xcassets */,
 				28A4ECBA218C3E8D006BA67C /* LaunchScreen.storyboard */,
 				28A4ECBD218C3E8D006BA67C /* Info.plist */,
 				28A4ECB5218C3E8D006BA67C /* pb1.xcdatamodeld */,
+				28A4ECC7218C4163006BA67C /* Contacts.swift */,
+				28A4ECC9218C4268006BA67C /* ConTableViewCell.swift */,
 			);
 			path = pb1;
+			sourceTree = "<group>";
+		};
+		28A4ECD1218C54FF006BA67C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28A4ECD2218C54FF006BA67C /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +165,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A4ECC8218C4163006BA67C /* Contacts.swift in Sources */,
+				28A4ECCA218C4268006BA67C /* ConTableViewCell.swift in Sources */,
+				28A4ECD0218C54D7006BA67C /* Contacts+CoreDataProperties.swift in Sources */,
+				28A4ECCC218C4E1C006BA67C /* EnterContactViewController.swift in Sources */,
+				28A4ECCF218C54D7006BA67C /* Contacts+CoreDataClass.swift in Sources */,
 				28A4ECB7218C3E8D006BA67C /* pb1.xcdatamodeld in Sources */,
 				28A4ECB1218C3E8D006BA67C /* ViewController.swift in Sources */,
 				28A4ECAF218C3E8D006BA67C /* AppDelegate.swift in Sources */,
@@ -289,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4755664329;
 				INFOPLIST_FILE = pb1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +329,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = exaact.pb1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,6 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4755664329;
 				INFOPLIST_FILE = pb1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = exaact.pb1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
