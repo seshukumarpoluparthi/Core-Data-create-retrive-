@@ -9,10 +9,12 @@
 import UIKit
 import CoreData
 
+
 class ViewController: UIViewController {
   //  var items : [NSManagedObject] = []
    // var cons = [contact]()
     var contact1 = [Contacts]()
+    
   //  var cons = [contact(name:"seshu",phno:"754673"),contact(name:"seshu",phno:"754673"),contact(name:"seshu",phno:"754673"),contact(name:"seshu",phno:"754673")]
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -23,7 +25,7 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
         tableView.tableFooterView = UIView()
         retrieveData()
-        
+      //  updateUser()
         
         
         
@@ -53,6 +55,35 @@ class ViewController: UIViewController {
             print("Failed")
         }
     }
+    
+    func updateUser() {
+
+        guard  let appdelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appdelegate.persistentContainer.viewContext
+
+        do{
+            contact1 = try managedContext.fetch(Contacts.fetchRequest())
+           print(contact1)
+
+            let first = contact1.first
+            first?.personNumber! += "added"
+            try managedContext.save()
+
+        } catch {
+            print(error.localizedDescription)
+        }
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }
 extension ViewController : UITableViewDelegate,UITableViewDataSource{
     
@@ -77,6 +108,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
             let managedContext = appDelegate.persistentContainer.viewContext
+       
             let cond = contact1[indexPath.row]
             if editingStyle == .delete{
                 managedContext.delete(cond)
@@ -87,7 +119,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
                 }
         //Code to Fetch New Data From The DB and Reload Table.
                 do{
-            contact1 = try managedContext.fetch(Contacts.fetchRequest())
+        contact1 = try managedContext.fetch(Contacts.fetchRequest())
                 }catch let error as NSError{
                     print("Error While Deleting Note: \(error.userInfo)")
                 }
@@ -96,6 +128,20 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
      //    tableView.reloadData()
             
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let name = contact1[indexPath.row].personName!
+        let phno = contact1[indexPath.row].personNumber!
+        print(name)
+        print(phno)
+        let stbd = UIStoryboard(name: "Main", bundle: nil)
+        let vc = stbd.instantiateViewController(withIdentifier: "EnterContactViewController") as! EnterContactViewController
+        vc.p_name = contact1[indexPath.row].personName!
+        vc.p_no = contact1[indexPath.row].personNumber!
+        vc.postion=indexPath.row
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     
